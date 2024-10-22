@@ -10,3 +10,13 @@ function generateArray(size) {
     return array;
 }
 
+// Display the array
+function displayArray(array) {
+    arrayContainer.innerHTML = '';
+    array.forEach(value => {
+        const bar = document.createElement('div');
+        bar.classList.add('bar');
+        bar.style.height = `${value}px`;
+        arrayContainer.appendChild(bar);
+    });
+}
