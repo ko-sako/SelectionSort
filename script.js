@@ -20,3 +20,10 @@ function displayArray(array) {
         arrayContainer.appendChild(bar);
     });
 }
+
+// Add event listener to start sorting button
+startButton.addEventListener('click', () => {
+    const array = generateArray(10); // Generate 10 elements
+    displayArray(array);
+    // selectionSort(array);
+});
