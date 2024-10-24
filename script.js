@@ -21,9 +21,32 @@ function displayArray(array) {
     });
 }
 
+
+
 // Add event listener to start sorting button
 startButton.addEventListener('click', () => {
-    const array = generateArray(10); // Generate 10 elements
+    const array = generateArray(10); // Generate Array which have 10 elements
     displayArray(array);
-    // selectionSort(array);
-});
+    selectionSort(array);
+})
+
+// Visualization of Selection Sort
+// Visualization of selection sort
+async function selectionSort(array) {
+    for (let i = 0; i < array.length - 1; i++) {
+        let minIndex = i;
+        const bars = document.querySelectorAll('.bar');
+
+        // Find the minimum value
+        for (let j = i + 1; j < array.length; j++) {
+            bars[minIndex].classList.remove('highlight');
+            bars[j].classList.add('highlight');
+
+            await new Promise(resolve => setTimeout(resolve, 500)); // Delay
+
+            if (array[j] < array[minIndex]) {
+                minIndex = j;
+            }
+        }
+    }
+}
