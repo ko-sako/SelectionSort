@@ -5,3 +5,11 @@
     display: inline-block;
     transition: height 0.3s;
 }
+
+.highlight {
+    background-color: bisque;
+}
+
+.highlight2 {
+    background-color: deeppink;
+}
